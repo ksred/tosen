@@ -1,3 +1,4 @@
+<?php $this->load->view('_template/header.php'); ?>
 <?php
 if ($use_username) {
 	$username = array(
@@ -98,3 +99,4 @@ $captcha = array(
 </table>
 <?php echo form_submit('register', 'Register'); ?>
 <?php echo form_close(); ?>
+<?php $this->load->view('_template/footer.php'); ?>

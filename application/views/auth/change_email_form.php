@@ -1,3 +1,4 @@
+<?php $this->load->view('_template/header.php'); ?>
 <?php
 $password = array(
 	'name'	=> 'password',
@@ -27,3 +28,4 @@ $email = array(
 </table>
 <?php echo form_submit('change', 'Send confirmation email'); ?>
 <?php echo form_close(); ?>
+<?php $this->load->view('_template/footer.php'); ?>

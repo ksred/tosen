@@ -1,3 +1,4 @@
+<?php $this->load->view('_template/header.php'); ?>
 <?php
 $old_password = array(
 	'name'	=> 'old_password',
@@ -38,3 +39,4 @@ $confirm_new_password = array(
 </table>
 <?php echo form_submit('change', 'Change Password'); ?>
 <?php echo form_close(); ?>
+<?php $this->load->view('_template/footer.php'); ?>
