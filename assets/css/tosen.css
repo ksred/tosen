@@ -37,4 +37,13 @@
 	top: 70px;
 	z-index: 999;
 }
+.active-trade {
+	border: 2px solid #4a4a4a;
+}
+.table-profit {
+	color: #00B9BD;
+}
+.table-loss {
+	color: #FB6900;
+}
 /***************************/

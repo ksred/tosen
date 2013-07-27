@@ -82,7 +82,7 @@ $(document).ready( function() {
 				var profitRealC = ((profitC*100)/margin)*amount;
 				var lossRealC = ((lossC*100)/margin)*amount;
 				var netProfitRealC = profitRealC-feeAmt;
-				var netLossRealC = lossRealC+feeAmt;
+				var netLossRealC = lossRealC-feeAmt;
 				profit.val((profitC*100).toFixed(2)); //show percentage
 				loss.val((lossC*100).toFixed(2)); //show percentage
 				profitReal.val(profitRealC.toFixed(2));
@@ -91,16 +91,16 @@ $(document).ready( function() {
 				netLossReal.val(netLossRealC.toFixed(2));
 				fee.val(feeAmt.toFixed(2));
 
-				drawChart($(this), margin, netProfitRealC, netLossRealC);
+				drawChart($(this), amount, netProfitRealC, netLossRealC);
 
 			} else if (direction == 'Sell') {
 				var feeAmt = (amount*(1/margin))*feePerc;
 				var profitC = ((open-spread)/limit)-1;
-				var lossC = 1-((open-spread)/stop);
+				var lossC = -(1-((open-spread)/stop));
 				var profitRealC = ((profitC*100)/margin)*amount;
 				var lossRealC = ((lossC*100)/margin)*amount;
 				var netProfitRealC = profitRealC-feeAmt;
-				var netLossRealC = lossRealC+feeAmt;
+				var netLossRealC = lossRealC-feeAmt;
 				profit.val((profitC*100).toFixed(2)); //show percentage
 				loss.val((lossC*100).toFixed(2)); //show percentage
 				profitReal.val(profitRealC.toFixed(2));

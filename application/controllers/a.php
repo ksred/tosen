@@ -86,6 +86,7 @@ class A extends CI_Controller
 	function get_all_user_trades ($type = 'cfd') {
 		$trades = $this->Model_trade->get_all_trades_per_user($this->tank_auth->get_user_id(), $type);
 		$data['trades'] = $trades->result();
+		$data['currency'] = 'R';
 		$this->load->view('dash/all_trades', $data);
 	}
 
