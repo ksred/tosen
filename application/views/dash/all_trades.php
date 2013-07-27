@@ -20,7 +20,7 @@
 	<td><?= $t->limit ?></td>
 	<td><?= $t->net_profit_real ?></td>
 	<td><?= $t->net_loss_real ?></td>
-	<td><?= $t->active ?></td>
+	<td><span class="glyphicon glyphicon-<?= ($t->active == '1') ? "ok" : "remove" ?>"></span></td>
 	<td><?= $t->result ?></td>
 	<td><a class="btn btn-primary" href="<?= BASE_URL ?>a/edit_trade/<?= $t->id ?>">More</a></td>
 </tr>

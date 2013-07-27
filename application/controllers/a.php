@@ -92,8 +92,24 @@ class A extends CI_Controller
 	function edit_trade ($id, $type = 'cfd') {
 		$trade = $this->Model_trade->get_trade($id, $this->tank_auth->get_user_id(), $type)->result();
 		$data['trade'] = $trade[0];
+		$data['title'] = 'Tosen';
 		$data['currency'] = 'R';
 		$this->load->view('dash/edit_trade', $data);
+	}
+
+	function update_trade ($type = 'cfd') {
+		$data = array (
+					'id' => $this->input->post('id'),
+					'user_id' => $this->tank_auth->get_user_id(),
+					'active' => $this->input->post('active'),
+					'result' => $this->input->post('result')
+		);
+		$res = $this->Model_trade->update_user_trade($data, $type);
+		if ($res) {
+			echo json_encode(array("success" => 1));
+		} else {
+			echo json_encode(array("success" => 0));
+		}
 	}
 }
 

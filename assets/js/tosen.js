@@ -24,7 +24,7 @@ $(document).ready( function() {
 		var price = $(this).parent().parent().parent().find('[data-id="open"]').val();
 		var shares = $(this).val();
 		if (price != '') {
-			$(this).parent().parent().parent().find('[data-id="amount"]').val((price*shares).toFixed(2));
+			$(this).parent().parent().parent().find('[data-id="amount"]').val(((price*shares)/10).toFixed(2));
 		}
 	});
 
@@ -32,7 +32,7 @@ $(document).ready( function() {
 		var price = $(this).parent().parent().parent().find('[data-id="open"]').val();
 		var amount = $(this).val();
 		if (price != '') {
-			$(this).parent().parent().parent().find('[data-id="shares"]').val((amount/price).toFixed(2));
+			$(this).parent().parent().parent().find('[data-id="shares"]').val(((amount/price)*10).toFixed(2));
 		}
 	});
 
@@ -61,7 +61,7 @@ $(document).ready( function() {
 			var open = parseFloat($(this).parent().parent().parent().find('[data-id="open"]').val());
 			var stop = parseFloat($(this).parent().parent().parent().find('[data-id="stop"]').val());
 			var limit = parseFloat($(this).parent().parent().parent().find('[data-id="limit"]').val());
-			var spread = parseFloat($(this).parent().parent().parent().find('[data-id="spread"]').val());
+			var spread = parseFloat($(this).parent().parent().parent().find('[data-id="spread"]').val())/100;
 			var margin = parseFloat($(this).parent().parent().parent().find('[data-id="margin"]').val());
 			var feePerc = parseFloat($(this).parent().parent().parent().find('[data-id="feePerc"]').val());
 			var amount = parseFloat($(this).parent().parent().parent().find('[data-id="amount"]').val());
@@ -235,4 +235,34 @@ $(document).ready( function() {
 		var ch = new Chart(chartObj).Pie(data, options);
 		$('.color-guide').fadeIn();
 	});
+
+	$(document).on('click', '.btn-update-trade', function() {
+		var id = $('.trade-list-single .btn-id').attr('data-value');
+		var active = $('.trade-list-single .btn-active').attr('data-value');
+		var result = $('.trade-list-single .btn-result').attr('data-value');
+		var d = 'id='+id+'&active='+active+'&result='+result;
+		$.ajax({
+			type: "POST",
+			url: baseUrl+'a/update_trade/',
+			data: d,
+			dataType : 'json',
+			success: successEdit
+		});
+	});
+
+	function successEdit (data) {
+		if (data.success == '1') {
+			$('.alert-notify .text').html('Trade entered successfully');
+			$('.alert-notify').removeClass('alert-danger').fadeIn();
+			$('.alert-notify').addClass('alert-success').fadeIn();
+			$('.alert-notify').delay(3000).fadeOut();
+			window.location.href = baseUrl+'a/show';
+		} else {
+			$('.alert-notify .text').html('Something went wrong');
+			$('.alert-notify').removeClass('alert-success').fadeIn();
+			$('.alert-notify').addClass('alert-danger').fadeIn();
+			$('.alert-notify').delay(10000).fadeOut();
+		}
+	}
+
 });

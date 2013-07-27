@@ -5,8 +5,7 @@
 		<fieldset>
 			<div class="alert alert-top">
 				<button type="button" class="close" data-dismiss="alert">&times;</button>
-				<div class="text"></div>
-		    </div>
+				<div class="text"></div> </div>
 			<div class="form-group col-lg-12">
 				<select data-id="instrument" class="span2 form-control">
 						<option value="<?= $trade->instrument ?>" data-margin="" ><?= $trade->instrument ?></option>
@@ -164,8 +163,9 @@
 	<div class="col-lg-12 pull-left">
 		<button data-for="active" class="btn btn-large btn-active <?= $active_class ?>" data-value="<?= $trade->active ?>"><?= $active_text ?></button>
 		<button data-for="result" class="btn btn-large btn-result <?= $result_class ?>" data-value="<?= $trade->result ?>"><?= $result_text ?></button>
+		<button class="btn btn-large btn-id hidden" data-value="<?= $trade->id ?>"></button>
 		<button class="btn btn-large pull-right btn-default chart-show hidden">Show chart</button>
-		<button class="btn btn-large pull-right btn-default ">Save</button>
+		<button class="btn btn-large pull-right btn-default btn-update-trade">Save</button>
 	</div>
 </div>
 <script>

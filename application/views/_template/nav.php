@@ -3,7 +3,7 @@
                     <a class="navbar-brand" href="#">Project name</a>
                         <ul class="navbar-nav nav">
                             <li class="active"><a href="<?= BASE_URL ?>">Home</a></li>
-                            <li><a href="<?= BASE_URL ?>/a/show">Trades</a></li>
+                            <li><a href="<?= BASE_URL ?>a/show">Trades</a></li>
                             <li><a href="#about">About</a></li>
                             <li><a href="#contact">Contact</a></li>
                             <li class="dropdown">

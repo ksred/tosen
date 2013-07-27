@@ -56,6 +56,11 @@ class Model_trade extends CI_Model
 		return $result;
 	}
 
+	function update_user_trade ($data, $type) {
+		$table = "user_trade_".$type;
+		$this->db->where('id', $data['id']);
+		return $this->db->update($table, $data);
+	}
 
 
 }
