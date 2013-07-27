@@ -1,0 +1,40 @@
+/*
+	CSS for Tosen
+*/
+
+/****************************
+******* Trade page **********
+****************************/
+.trade-list-item label {
+	border-radius: 5px;
+}
+.hidden {
+	display: none;
+}
+.trade-list-item .bold {
+	font-weight: bold;
+}
+.trade-list-item .direction label:hover {
+	cursor: pointer;
+}
+.color-guide {
+	display: none;
+}
+.alert-top {
+	display: none;
+}
+.submit-group {
+	display: none;
+	margin-top: 50px;
+}
+.submit-group button {
+	margin: 10px 0px;
+}
+.alert-notify {
+	display: none;
+	position: fixed;
+	right: 10px;
+	top: 70px;
+	z-index: 999;
+}
+/***************************/

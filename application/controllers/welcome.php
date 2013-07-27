@@ -12,7 +12,14 @@ class Welcome extends CI_Controller
 
 	function index()
 	{
-		$this->load->view('landing');
+		if ($this->tank_auth->is_logged_in()) {
+			$data['title'] = "Tosen";
+			$this->load->view('dash/index', $data);
+		} else {
+			$data['title'] = "Tosen";
+			$this->load->view('landing', $data);
+		}
+
 	}
 }
 

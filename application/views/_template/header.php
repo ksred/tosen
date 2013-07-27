@@ -13,15 +13,24 @@
         <link rel="shortcut icon" href="<?= BASE_URL ?>assets/favicon.ico">
 
         <link rel="stylesheet" href="<?= BASE_URL ?>assets/css/bootstrap.min.css">
-        <link rel="stylesheet" href="<?= BASE_URL ?>assets/css/bootstrap-responsive.min.css">
-        <link href='http://fonts.googleapis.com/css?family=Merriweather:300,400' rel='stylesheet' type='text/css'>
-        <link rel="stylesheet" href="<?= BASE_URL ?>assets/css/main.css">
+        <link rel="stylesheet" href="<?= BASE_URL ?>assets/css/bootstrap-glyphicons.css">
+        <link rel="stylesheet" href="<?= BASE_URL ?>assets/css/ladda-themeless.min.css">
+        <link rel="stylesheet" href="<?= BASE_URL ?>assets/css/tosen.css">
 
-        <script src="<?= BASE_URL ?>assets/js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.23/jquery-ui.js"></script>
+        <script src="<?= BASE_URL ?>assets/js/bootstrap.min.js"></script>
+        <script src="<?= BASE_URL ?>assets/js/chart.min.js"></script>
+        <script src="<?= BASE_URL ?>assets/js/spin.min.js"></script>
+        <script src="<?= BASE_URL ?>assets/js/ladda.min.js"></script>
+        <script src="<?= BASE_URL ?>assets/js/tosen.js"></script>
+
     </head>
     <body>
         <!--[if lt IE 7]>
             <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
         <![endif]-->
 
+        <?php $this->load->view('_template/nav'); ?>
         <div class="container">
