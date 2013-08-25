@@ -9,6 +9,7 @@
 	<td>Loss</td>
 	<td>Active</td>
 	<td>Result</td>
+	<td>Date</td>
 	<td>More</td>
 </tr>
 <?php foreach($trades as $t) : ?>
@@ -22,6 +23,7 @@
 	<td class="table-loss"><?= $currency.$t->net_loss_real ?></td>
 	<td><span class="glyphicon glyphicon-<?= ($t->active == '1') ? "ok" : "remove" ?>"></span></td>
 	<td><?= $t->result ?></td>
+	<td><?php $d = strtotime($t->date_open); echo date('j F, Y', $d) ?></td>
 	<td><a class="btn btn-primary" href="<?= BASE_URL ?>a/edit_trade/<?= $t->id ?>">More</a></td>
 </tr>
 <?php endforeach; ?>

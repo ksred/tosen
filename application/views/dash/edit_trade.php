@@ -159,6 +159,9 @@
 			<h4><span class='col-lg-3 label' style='background-color: #00B9BD'>Profit</span></h4>
 			<h4><span class='col-lg-3 label' style='background-color: #FB6900'>Loss</span></h4>
 		</div>
+		<div class="col-lg-12">
+			<?php $d = strtotime($trade->date_open); echo date('j F, Y', $d) ?>
+		</div>
 	</div>
 	<div class="col-lg-12 pull-left">
 		<button data-for="active" class="btn btn-large btn-active <?= $active_class ?>" data-value="<?= $trade->active ?>"><?= $active_text ?></button>
